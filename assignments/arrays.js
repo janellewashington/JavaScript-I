@@ -77,13 +77,15 @@ console.log(`The last car is a ${lastCar.car_make} ${lastCar.car_model}`);
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-for (let i = 0; i < inventory.length; i++) {
-    carModels.push(inventory[i].car_model);
-}
-carModels.sort(function (a,b){
-    return a.localeCompare(b, 'en', {'numeric': true, 'sensitivity': 'base'});
-});
 
+let carModels = [];
+for(let i = 0; i<inventory.length; i++){
+  if(!carModels.includes(inventory[i].car_model)){
+    carModels.push(inventory[i].car_model);
+  }
+}
+
+carModels.sort();
 console.log(carModels);
 
 // ==== Challenge 4 ====
